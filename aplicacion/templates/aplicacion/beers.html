@@ -1,0 +1,31 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block title %}
+    Beers
+{% endblock title %}
+
+{% block header %}
+    Beers
+{% endblock header %}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Estilo</th>
+            <th>Color</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for beer in beers %}
+    <tr>
+        <td>{{ beer.id }}</td>
+        <td>{{ beer.estilo }}</td>
+        <td>{{ beer.color }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

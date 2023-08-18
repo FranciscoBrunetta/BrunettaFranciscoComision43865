@@ -1,0 +1,14 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block title %}Register{% endblock title %}
+{% block header %}Register{% endblock header %}
+{% block content %}
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+        {{ form.as_table }}
+        </table>
+        <button type="submit">Register User</button>
+    </form>
+{% endblock content %}

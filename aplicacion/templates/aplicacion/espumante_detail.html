@@ -1,0 +1,38 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block title %}Sparkling{% endblock title %}
+{% block header %}Sparkling{% endblock header %}
+{% block content %}
+<table>
+    <tr>
+        <td><h2>Sparkling: {{object}}</h2></td>
+    </tr>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+            <th>Varietal</th>
+            <th>Marca</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>{{ object.id }}</td>
+            <td>{{ object.categoria }}</td>
+            <td>{{ object.varietal }}</td>
+            <td>{{ object.marca }}</td>
+        </tr>
+
+    </tbody>
+</table>
+<a 
+href="{% url 'sparkling' %}"
+class="btn btn-danger"
+style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+><i class="fa fa-share fa-sm" title="List Back">Volver</i>
+</a>
+{% endblock content %}

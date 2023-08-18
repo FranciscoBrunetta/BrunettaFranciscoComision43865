@@ -1,0 +1,21 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block title %}
+    Our Creator
+{% endblock title %}
+
+{% block header %}
+Creator of Drinks Teofilo
+{% endblock header %}
+
+{% block content %}
+
+    {% for ourcreator in ourcreator %}
+    <ul>
+        <li>
+    {{ ourcreator.about_me }}
+        </li>
+    </ul>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block title %}Whisky{% endblock title %}
+{% block header %}Whisky{% endblock header %}
+{% block content %}
+<table>
+    <tr>
+        <td><h2>Whisky: {{object}}</h2></td>
+    </tr>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+            <th>Marca</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>{{ object.id }}</td>
+            <td>{{ object.categoria }}</td>
+            <td>{{ object.marca }}</td>
+        </tr>
+
+    </tbody>
+</table>
+<a 
+href="{% url 'whisky' %}"
+class="btn btn-danger"
+style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+><i class="fa fa-share fa-sm" title="List Back">Volver</i>
+</a>
+{% endblock content %}

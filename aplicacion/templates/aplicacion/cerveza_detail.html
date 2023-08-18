@@ -1,0 +1,36 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block title %}Beers{% endblock title %}
+{% block header %}Beers{% endblock header %}
+{% block content %}
+<table>
+    <tr>
+        <td><h2>Beers: {{object}}</h2></td>
+    </tr>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Estilo</th>
+            <th>Color</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>{{ object.id }}</td>
+            <td>{{ object.estilo }}</td>
+            <td>{{ object.color }}</td>
+        </tr>
+
+    </tbody>
+</table>
+<a 
+href="{% url 'beers' %}"
+class="btn btn-danger"
+style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+><i class="fa fa-share fa-sm" title="List Back">Volver</i>
+</a>
+{% endblock content %}

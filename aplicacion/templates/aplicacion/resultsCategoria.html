@@ -1,0 +1,25 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block header %}
+Vinos de la Categoria {{ categoria }}
+{% endblock header %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Categoria</th>
+                <th>Uva</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for wine in wines %}
+        <tr>
+            <td>{{ wine.categoria }}</td>
+            <td>{{ wine.uva }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

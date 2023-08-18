@@ -1,0 +1,59 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block title %}Wines{% endblock title %}
+{% block header %}Wines{% endblock header %}
+{% block content %}
+<table>
+    <tr>
+        <td width="200"><h2>Wines</h2></td>
+        <td>
+            <a 
+            href="{% url 'create_wine' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-lg" title="New Record"> </i>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+            <th>Uva</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in vino_list %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.categoria }}</td>
+            <td>{{ p.uva }}</td>
+
+            <td>
+                <a 
+                href="{% url 'detail_wine' p.id %}"
+                class="btn btn-info"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-search fa-sm" title="View Record"></i>
+                </a>
+                <a 
+                href="{% url 'update_wine' p.id %}"
+                class="btn btn-primary"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a 
+                href="{% url 'delete_wine' p.id %}"
+                class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Home</title>
+</head>
+<body>
+    <h2>Bienvenidos a la web de Vinoteca Teofilo</h2>
+    <br>{{ nombre }}
+    <br>{{ apellido }}
+    <br>{{ dni }}
+    <h4>{{ fecha_hoy }}</h4>
+
+    {% for nota in notas %}
+        
+        {% if nota > 5 %}
+            <h4>Aprobado con {{ nota }}</h4>
+        {% else %}    
+            <h4>NoAprobado con {{ nota }}</h4>
+        {% endif %}
+        
+    {% endfor %}
+</body>
+</html>

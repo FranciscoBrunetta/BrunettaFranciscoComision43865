@@ -1,0 +1,33 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block title %}
+    Spirits
+{% endblock title %}
+
+{% block header %}
+    Spirits
+{% endblock header %}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+            <th>Producto</th>
+            <th>Marca</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for spirit in spirits %}
+    <tr>
+        <td>{{ spirit.id }}</td>
+        <td>{{ spirit.categoria }}</td>
+        <td>{{ spirit.producto }}</td>
+        <td>{{ spirit.marca }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

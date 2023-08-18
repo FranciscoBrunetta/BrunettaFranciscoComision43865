@@ -1,0 +1,33 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block title %}
+    Sparkling
+{% endblock title %}
+
+{% block header %}
+    Sparkling
+{% endblock header %}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+            <th>Varietal</th>
+            <th>Marca</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for sparkling in sparkling %}
+    <tr>
+        <td>{{ sparkling.id }}</td>
+        <td>{{ sparkling.categoria }}</td>
+        <td>{{ sparkling.varietal }}</td>
+        <td>{{ sparkling.marca }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

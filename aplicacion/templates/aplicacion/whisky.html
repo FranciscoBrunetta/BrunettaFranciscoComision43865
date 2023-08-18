@@ -1,0 +1,31 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block title %}
+    Whisky
+{% endblock title %}
+
+{% block header %}
+    Whisky
+{% endblock header %}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+            <th>Marca</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for whisky in whisky %}
+    <tr>
+        <td>{{ whisky.id }}</td>
+        <td>{{ whisky.categoria }}</td>
+        <td>{{ whisky.marca }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
